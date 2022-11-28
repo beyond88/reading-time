@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Speech to text recognition</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <h1 class="text-center" style="color: rgb(47 58 178)">
+          Reading time calculator
+        </h1>
+        <form>
+          <div class="form-group">
+            <label for="reading-time-textarea"> </label>
+            <textarea
+              class="form-control"
+              id="reading-time-textarea"
+              rows="10"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <div class="mb-3 row">
+              <label for="average-words" class="col-sm-4 col-form-label"
+                >Words per minute</label
+              >
+              <div class="col-sm-8">
+                <input
+                  type="range"
+                  class="form-range"
+                  id="average-words"
+                  value="225"
+                  min="1"
+                  max="5000"
+                />
+                <p><span id="count-wpm">225</span> wpm</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button
+              type="button"
+              class="btn btn-default"
+              id="clear-calculator"
+              style="background-color: rgb(255 255 255)"
+              onclick="clearStatistics()"
+            >
+              Clear
+            </button>
+            <button
+              type="button"
+              class="btn btn-default pull-right"
+              id="reading-time-calculator"
+              style="background-color: rgb(47 58 178); color: #fff"
+              onclick="calculateReadingTime()"
+            >
+              Calculate
+            </button>
+          </div>
+          <div class="form-group">
+            <div class="card">
+              <div class="card-header">Statistics</div>
+              <div class="card-body">
+                <p>
+                  <strong>Reading time: </strong
+                  ><span id="estimate-reading-time">0</span> minute read
+                </p>
+                <p>
+                  <strong>Total Number of words: </strong
+                  ><span id="total-words">0</span>
+                </p>
+                <p>
+                  <strong>Total Characters: </strong
+                  ><span id="total-characters">0</span>
+                </p>
+                <p>
+                  <strong>Total Spaces: </strong
+                  ><span id="total-spaces">0</span>
+                </p>
+                <p>
+                  <strong>Total vowels: </strong
+                  ><span id="total-vowels">0</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/reading-time-script.js"></script>
+  </body>
+</html>
